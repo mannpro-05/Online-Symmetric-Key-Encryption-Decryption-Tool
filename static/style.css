@@ -1,0 +1,113 @@
+body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #eef;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+div.wrap {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+div.wrap div {
+  position: relative;
+  margin: 50px 0;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  margin: 10px;
+  padding: 0 10px;
+  background-color:#eef;
+  color: black;
+  -webkit-transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+  transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+  
+}
+
+.active {
+  top: -25px;
+  font-size: 20px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  font-size: 20px;
+  background-color: #eef;
+  color: #7551e9;
+  
+}
+
+
+input[type=text]:focus {
+  outline: none;
+
+  
+}
+
+input[type=button], input[type=reset], input[type=submit] {
+    background-color: #8842d5;
+    border: none;
+    color: white;
+    padding: 18px 36px;
+    text-decoration: none;
+    margin: 5px 4px;
+    cursor: pointer;  
+}
+@media only screen and (max-width: 768px)
+{
+  h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 0px;
+  
+}
+  div.wrap {
+  width: 200px;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+div.wrap div {
+  position: relative;
+  margin: 50px auto;
+
+}
+.matrix
+{
+  padding: 0px 0px 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 50px auto;
+}
+}

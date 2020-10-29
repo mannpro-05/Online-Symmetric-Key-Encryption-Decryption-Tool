@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8" name="viewpoint"
+  content="width = device-width, initial-scale =1.0">
+  <title>CodePen - #5: Animated CSS Tabs (complete)</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="static/style1.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="tabs">
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <label for="tab-1" class="tab-label">Caesar Cipher</label>
+      <div class="tab-content">The Caesar Cipher technique is one of the earliest and simplest method of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter some fixed number of positions down the alphabet. For example with a shift of 1, A would be replaced by B, B would become C, and so on. The method is apparently named after Julius Caesar, who apparently used it to communicate with his officials.<br><br>
+Thus to cipher a given text we need an integer value, known as shift which indicates the number of position each letter of the text has been moved down.<br><br>
+The encryption can be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A = 0, B = 1,…, Z = 25. Encryption of a letter by a shift n can be described mathematically as.
+<br><br><center><img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-c8ec2929f6200eac3e62ce0606b45a7d_l3.svg" height="30"></center><br>
+<center><img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-2fa18340a62f44efc5fc32cb361a047e_l3.svg" height="30"></center>
+<a href="caesar_cipher">Click here to try the algorithm!</a>
+
+
+ </div>
+    </div>
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+      <label for="tab-2" class="tab-label">Vigenere Cipher</label>
+      <div class="tab-content">Vigenere Cipher is a method of encrypting alphabetic text. It uses a simple form of polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets .The encryption of the original text is done using the Vigenère square or Vigenère table.
+          <ul>
+            <li>The table consists of the alphabets written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar Ciphers.</li>
+            <li>At different points in the encryption process, the cipher uses a different alphabet from one of the rows.</li>
+            <li>The alphabet used at each point depends on a repeating keyword. </li>
+          </ul>
+          <br>
+<a href="vigener_cipher">Click here to try the algorithm!</a>
+
+</div>
+    </div>
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+      <label for="tab-3" class="tab-label">Vernam Cipher</label>
+      <div class="tab-content">Vernam Cipher is a method of encrypting alphabetic text. It is simply a type of substitution cipher. In this mechanism we assign a number to each character of the Plain-Text, like (a = 0, b = 1, c = 2, … z = 25).
+<br><br>
+<b>Method to take key:</b>
+In Vernam cipher algorithm, we take a key to encrypt the plain text which length should be equal to the length of the plain text.<br><br>
+
+<b>Encryption Algorithm:</b>
+
+
+<ol>
+<li>Assign a number to each character of the plain-text and the key according to alphabetical order.</li><br>
+<li>Add both the number (Corresponding plain-text character number and Key character number).</li><br>
+<li>Subtract the number from 26 if the added number is greater than 26, if it isn’t then leave it.</li><br>
+</ol>
+<a href="/vernam_cipher">Click Here to try the algorithm!</a>
+</div>
+    </div>
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+      <label for="tab-4" class="tab-label">Playfare Cipher</label>
+      <div class="tab-content">The Playfair cipher was the first practical digraph substitution cipher. The scheme was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs) instead of a single alphabet.<br><br>
+
+It was used for tactical purposes by British forces in the Second Boer War and in World War I and for the same purpose by the Australians during World War II. This was because Playfair is reasonably fast to use and requires no special equipment.<br><br>
+<a href="/playfare_cipher">Click Here to try the algorithm!</a>
+</div>
+</div>
+<div class="tab">
+      <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
+      <label for="tab-5" class="tab-label">Hill Cipher</label>
+      <div class="tab-content">Hill cipher is a polygraphic substitution cipher based on linear algebra.Each letter is represented by a number modulo 26. Often the simple scheme A = 0, B = 1, …, Z = 25 is used, but this is not an essential feature of the cipher. To encrypt a message, each block of n letters (considered as an n-component vector) is multiplied by an invertible n × n matrix, against modulus 26. To decrypt the message, each block is multiplied by the inverse of the matrix used for encryption.<br><br>
+
+The matrix used for encryption is the cipher key, and it should be chosen randomly from the set of invertible n × n matrices (modulo 26).<br><br>
+<a href="/hill_cipher">Click Here to try the algorithm!</a>
+</div>
+    </div>
+  </div>
+  <p>Example line outside of tab box</p>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

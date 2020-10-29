@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <title>CodePen - Rise - Input Text Field Label Animation</title>
+  <style type="text/css">
+    body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #eef;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+div.wrap {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+div.wrap div {
+  position: relative;
+  margin: 50px 0;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  margin: 10px;
+  padding: 0 10px;
+  background-color:#eef;
+  color: black;
+  -webkit-transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+  transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+  
+}
+
+.active {
+  top: -25px;
+  font-size: 20px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  font-size: 20px;
+  background-color: #eef;
+  color: #7551e9;
+  
+}
+
+
+input[type=text]:focus {
+  outline: none;
+
+  
+}
+
+input[type=button], input[type=reset], input[type=submit] {
+    background-color: #8842d5;
+    border: none;
+    color: white;
+    padding: 18px 36px;
+    text-decoration: none;
+    margin: 5px 4px;
+    cursor: pointer;  
+}
+@media only screen and (max-width: 768px)
+{
+  h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 0px;
+  
+}
+  div.wrap {
+  width: 200px;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+div.wrap div {
+  position: relative;
+  margin: 50px auto;
+
+}
+.matrix
+{
+  padding: 0px 0px 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 50px auto;
+}
+}
+  </style>
+  <script type="text/javascript">
+function tableCreate(a,b){
+  var m = document.forms[0];
+    var d = document.getElementById('d1');
+        d.innerHTML="";
+        tbl  = document.createElement('table');
+    tbl.style.width  = '250px';
+    tbl.style.border = '1';
+        d.innerHTML="<h5>Enter the key value in the "+a.toString()+"x"+b.toString()+" matrix!</h5>";
+    for(var i = 0; i < a; i++)
+    {
+        var tr = tbl.insertRow();
+        tr.style.width = '20px'
+
+        for(var j = 0; j < b; j++)
+        {
+                var td = tr.insertCell();
+                
+                var inp = document.createElement('input')
+                inp.setAttribute('type',"number");
+                inp.setAttribute('name',"frm_key"+i.toString()+j.toString());
+                inp.setAttribute('size',"0");
+                
+                inp.setAttribute('style','color:#7551e9;background-color: #eef;border: 1px solid black;font-size: 20px;background-color: #eef;color: #7551e9;text-align: center; width: 100%; height: 100%')
+
+
+                td.appendChild(m.appendChild(inp));
+                td.style.border = '0px ';
+                td.style.height= '30px ';
+
+        }
+    }
+    d.appendChild(tbl);
+  }
+    
+
+function clr(){
+  var d = document.getElementById('d1');
+  d.innerHTML="";
+}
+function bt_disable(){
+  document.getElementById('bt_decrypt').disabled = true;
+}
+function enable(){
+  var d=document.getElementById('cb1');
+  if (d.checked)
+  {
+    document.getElementById('bt_decrypt').disabled = false;
+    var l=document.createElement('label');
+    l.setAttribute('for','fname');
+    l.innerHTML = "Size";
+    var m=document.createElement('input');
+    m.setAttribute('type',"text");
+    m.setAttribute('name',"size");
+    m.setAttribute('id',"size");
+    m.setAttribute('required',"asd");
+    m.setAttribute('onkeypress',"return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))");
+    m.setAttribute('placeholder',"Enter the length of the plane text!");
+    var t = document.getElementById('size1');
+    var o = document.createElement('br');
+    t.appendChild(o);
+    t.appendChild(m);
+  }
+  else
+  {
+    document.getElementById('bt_decrypt').disabled = true;
+    var m=document.getElementById('size');
+    m.parentNode.removeChild(m);
+
+  }
+
+}
+
+function check_length(form){
+
+var a,b;
+a=document.getElementById('size').value;
+b=document.getElementById('frm_pt').value;
+
+if (a <= b.length)
+{
+  
+  return true; 
+}
+
+if(a!=b.length){
+  alert('The length of plane text provided is not equal!')
+  return false;
+}
+
+}
+  </script>
+
+
+
+</head>
+<body onload="bt_disable()">
+<!-- partial:index.partial.html -->
+<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+<div class="wrap">
+  <h1 style=color:#7551e9>Hill Cipher</h1><br>
+  <h3>{{ suggestion }}</h3>
+  <form action="/hill_cipher_encryption" method='post' onsubmit="return check_length(this)">
+  <div>
+    <label for="fname">Plain Text</label>
+    <input id="frm_pt" name="frm_pt" type="text" class="cool" value="{{ pt }}" required />
+  </div>
+  <div style="color: #7551e9">
+    <h2>Choose the type of matrix!</h2>
+    <input type="radio" name="inp" value="2" onclick="tableCreate(2,2)">2x2
+    <input type="radio" name="inp" value="3" onclick="tableCreate(3,3)">3x3
+    <input type="radio" name="inp" value="4" onclick="tableCreate(4,4)">4X4
+    <input type="radio" name="inp" value="5" onclick="tableCreate(5,5)">5X5
+    <input type="radio" name="inp" value="6" onclick="tableCreate(6,6)">6x6
+  </div>
+  <div class="matrix" id ='d1' style="color: #7551e9;
+  font-size: 30px" >
+    
+  </div>
+  
+  <div>
+    <label for="email">{{ text }}</label>
+    <input type="text" class="cool" name="frm_ct" value="{{ ct }}"/>
+  </div>
+  <div>
+  <input type="Submit" name="" value="Encrypt">&nbsp&nbsp&nbsp
+  <input type="Submit" name="" value="Decrypt" formaction="/hill_cipher_decryption" id="bt_decrypt">&nbsp
+  <div id="size1" style="color: #7551e9">Do you want to decrypt?<input type="checkbox" name="cb1" id="cb1" onclick="enable()"><br></div>
+  
+  </form><br><br>
+  </div>
+</div>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="static/script1.js"></script>
+
+</body>
+</html>
